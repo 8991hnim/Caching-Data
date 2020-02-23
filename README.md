@@ -2,7 +2,7 @@
 Giảm tải cho api sever bằng cách caching dữ liệu
 
 ## Mở đầu
-Hướng dẫn các bạn cách cache dữ liệu ở local, giúp cho việc giảm số lượng request đến server và tăng hiệu năng của chương trình. Các bạn hoàn toàn không cần sử dụng cache mà có thể trực tiếp request tới server.
+Hướng dẫn cách cache dữ liệu ở local giống như cấu trúc của Google Sample, giúp cho việc giảm số lượng request đến server và tăng hiệu năng của chương trình. 
 
 ## Vai trò bộ nhớ Cache
 Trước tiên, chúng ta cần hiểu vai trò của bộ nhớ cached (bộ nhớ đệm) Bộ nhớ cached rất hữu ích trong các tình huống sau:
@@ -14,7 +14,7 @@ Trước tiên, chúng ta cần hiểu vai trò của bộ nhớ cached (bộ nh
 - Disk Cache: Nó lưu dữ liệu vào ổ đĩa (như Sharepreference, database, file) . Nếu ứng dụng bị kill, dữ liệu được giữ lại. Hữu ích ngay cả sau khi ứng dụng khởi động lại. Chậm hơn memory cache, vì đây là thao tác I / O.
 
 ## Cách hoạt động của bộ nhớ cache
-Lần đầu tiên, người dùng mở ứng dụng, sẽ không có dữ liệu. Nó sẽ lấy dữ liệu từ mạng và lưu nó vào disk cahe và trả lại dữ liệu.
+Lần đầu tiên, người dùng mở ứng dụng, sẽ không có dữ liệu. Nó sẽ lấy dữ liệu từ mạng và lưu nó vào disk cahe và trả lại dữ liệu.<br/>
 Nếu người dùng kill app và khởi động lại, trong trường hợp này, tùy thuộc vào người phát triển, nó sẽ lấy dữ liệu từ trong disk cache hoặc api và trả về dữ liệu.
 
 ## Triển khai
@@ -32,7 +32,7 @@ Nếu người dùng kill app và khởi động lại, trong trường hợp n�
 Class này sẽ nằm ở Repository trong sơ đồ dưới đây
 ![alt text](https://developer.android.com/topic/libraries/architecture/images/final-architecture.png)
 
-Trước tiên, chúng ta cần 1 class AppExecutors để dễ dàng triển khai code ở background hoặc main thread.
+Trước tiên, chúng ta cần 1 class AppExecutors để dễ dàng triển khai code ở background hoặc main thread.<br/>
 AppExecutor
 ```
 public class AppExecutors {
@@ -245,7 +245,7 @@ public class Resource<T> {
     public enum Status { SUCCESS, ERROR, LOADING}
 }
 ```
-Cuối cùng, class NetworkBoundResource - nơi xử lý tất cả việc liên quan caching data
+Cuối cùng, class NetworkBoundResource - nơi xử lý tất cả việc liên quan caching data<br/>
 NetworkBoundResource.java
 ```
 public abstract class NetworkBoundResource<CacheObject, RequestObject> {
