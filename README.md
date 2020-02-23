@@ -1,8 +1,6 @@
 # Caching-Data
-Giảm tải cho api sever bằng cách caching dữ liệu
-
 ## Mở đầu
-Hướng dẫn cách cache dữ liệu ở local giống như cấu trúc của Google Sample, giúp cho việc giảm số lượng request đến server và tăng hiệu năng của chương trình. 
+Hướng dẫn cách cache dữ liệu giống như cấu trúc sample project của Google, giúp cho việc giảm số lượng request đến server và tăng hiệu năng của chương trình. 
 
 ## Vai trò bộ nhớ Cache
 Trước tiên, chúng ta cần hiểu vai trò của bộ nhớ cached (bộ nhớ đệm) Bộ nhớ cached rất hữu ích trong các tình huống sau:
